@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular Demo</title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <script src="js/angular.js"></script>
+    <script src="js/app.js"></script>
+    <style>
+       .checked-checked {
+        background-color: #dd514c;
+        }
+
+       .checked-unchecked {
+           background-color: gray;
+       }
+    </style>
+</head>
+<body ng-app="MyApp">
+<div class="search">
+    <h1>Search Items</h1>
+    <label for="search">Search:</label>
+    <input type="text" name="seacrh" placeholder="Search for items" autofocus ng-model="query"/>
+</div>
+<div class="" ng-controller="MyAuthCtl">
+    <ul class="unstyled">
+    <li ng-repeat="item in items | filter:query" >
+        <div class="span3">
+        <!--<input type="checkbox" {{item.bool}} />-->
+        <h1>{{item.name}}</h1>
+        <p>{{item.email }} - {{item.fullname | uppercase}}</p>
+        </div>
+    </li>
+    </ul>
+</div>
+    <div class="row" ng-controller="ToggleCtrl">
+        <button ng-click="toggle()">Toggle</button>
+        <p ng-show="visible">Hello iam visible</p>
+    </div>
+    <div ng-controller="Inctrl">
+        <p > {{incrementValue()}}</p>
+
+    </div>
+<div ng-controller="NameCtrl">
+    <input type="text" name="" ng-model="name" id="" placeholder="Enter name"/>
+
+    <h1>{{greetings}}</h1>
+
+
+</div>
+
+<div ng-controller="FirstController">
+    <h4>The simplest adding machine ever</h4>
+    <button ng-click="add(1)" class="btn btn-primary">Add</button>
+    <a ng-click="subtract(1)" class="btn btn-secondary">Subtract</a>
+    <h4>Current count: {{ counter }}</h4>
+</div>
+
+<div ng-controller="UserCtrl">
+    <ul ng-repeat="user in users">
+        <li>{{user}}</li>
+    </ul>
+
+    <p>{{first}}</p>
+</div>
+
+<div class="row">
+
+    <div class="span4">
+        <input type="text" ng-model="typeText"/>
+        <div ng-class="typeText"> Looks like iam changing</div>
+    </div>
+</div>
+
+
+</body>
+</html>

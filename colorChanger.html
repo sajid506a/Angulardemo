@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Color Changer</title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <script src="js/angular.js"></script>
+    <script src="js/app.js"></script>
+</head>
+<body >
+<div class="container" ng-init="r=128;g=128;b=128">
+    <h1 style="color:rgb({{r}},{{g}},{{b}})" ng-click="r=0; g=136; b=245;">Changes color of this Heading</h1>
+    <label for="red"> Red:
+    <input id="red" name="red" type="range" min="1" max="255" step="1" ng-model="r"/>
+    </label>
+    <label for="green"> Green:
+    <input id='green' name="green" type="range"  min="1" max="255" step="1" ng-model="g"/>
+        </label>
+    <label for="blue"> Blue:
+         <input id="blue" name="blue" type="range"  min="1" max="255" step="1" ng-model="b"/>
+    </label>
+
+</div>
+</body>
+</html>
